@@ -11,7 +11,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:$HOME/pear/bin
 
-export HOMEBREW_GITHUB_API_TOKEN=ded02d7f29822cbf6a2287c8e60f0d0cb843d7fe
+export HOMEBREW_GITHUB_API_TOKEN=
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
