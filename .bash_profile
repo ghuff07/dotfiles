@@ -2,7 +2,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
-PATH=/usr/local/bin:$PATH
+PATH=/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
 
