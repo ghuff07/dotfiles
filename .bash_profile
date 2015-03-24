@@ -9,7 +9,9 @@ export PATH
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 export PATH=$PATH:$HOME/pear/bin
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 export HOMEBREW_GITHUB_API_TOKEN=
 
