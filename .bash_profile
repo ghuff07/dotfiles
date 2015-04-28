@@ -9,9 +9,9 @@ PATH=$HOME/bin:$PATH
 export PATH
 
 export GOPATH=$HOME/go
+export PYENV_ROOT=/usr/local/opt/pyenv
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PYENV_ROOT=/usr/local/opt/pyenv
 export HOMEBREW_GITHUB_API_TOKEN=
 
 # Load the shell dotfiles, and then some:
@@ -22,14 +22,13 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-source ~/.profile
-
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
     . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+source ~/.profile
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
