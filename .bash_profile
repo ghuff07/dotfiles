@@ -1,7 +1,9 @@
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix php-version)/php-version.sh && php-version 5
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
-# Add Homebrew `/usr/local/sbin` and User `~/bin` to the `$PATH`
+# Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
 PATH=/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
@@ -9,9 +11,7 @@ export PATH
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
+export PYENV_ROOT=/usr/local/opt/pyenv
 export HOMEBREW_GITHUB_API_TOKEN=
 
 # Load the shell dotfiles, and then some:
@@ -27,5 +27,9 @@ source ~/.profile
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
     . $(brew --prefix)/share/bash-completion/bash_completion
 fi
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
