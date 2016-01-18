@@ -15,12 +15,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 export JENV_ROOT=/usr/local/opt/jenv
 export PYENV_ROOT=/usr/local/opt/pyenv
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -30,17 +24,6 @@ export MANPAGER="less -X"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 export HOMEBREW_GITHUB_API_TOKEN=
-
-# Generic colourizer
-GRC=`which grc`
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-    then
-        alias colourify="$GRC -es --colour=auto"
-        alias configure='colourify ./configure'
-        for app in {diff,make,gcc,g++,ping,traceroute}; do
-            alias "$app"='colourify '$app
-    done
-fi
 
 # Highlighting inside manpages and elsewhere
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -69,6 +52,17 @@ source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix php-version)/php-version.sh && php-version 5
 source "`brew --prefix`/etc/grc.bashrc"
 
+# Generic colourizer
+GRC=`which grc`
+if [ "$TERM" != dumb ] && [ -n "$GRC" ]
+    then
+        alias colourify="$GRC -es --colour=auto"
+        alias configure='colourify ./configure'
+        for app in {diff,make,gcc,g++,ping,traceroute}; do
+            alias "$app"='colourify '$app
+    done
+fi
+
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
     . $(brew --prefix)/share/bash-completion/bash_completion
 fi
@@ -82,7 +76,6 @@ fi;
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
-# You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
 complete -C aws_completer aws
