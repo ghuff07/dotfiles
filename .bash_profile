@@ -67,6 +67,8 @@ if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
     . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
+if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type __git_complete &> /dev/null; then
     __git_complete g __git_main
