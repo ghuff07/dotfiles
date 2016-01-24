@@ -15,8 +15,8 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-export JENV_ROOT=/usr/local/opt/jenv
-export PYENV_ROOT=/usr/local/opt/pyenv
+export JENV_ROOT=/usr/local/var/jenv
+export PYENV_ROOT=/usr/local/var/pyenv
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export FINDBUGS_HOME=/usr/local/Cellar/findbugs/3.0.1/libexec
 export EDITOR='subl -w'
@@ -89,6 +89,8 @@ shopt -s cdspell;
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+export STUDIO_JDK=$JAVA_HOME
 
 source ~/.profile
 
