@@ -15,6 +15,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export PATH=~/anaconda3/bin:"$PATH"
 export JENV_ROOT=/usr/local/var/jenv
 export PYENV_ROOT=/usr/local/var/pyenv
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -49,7 +50,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-source $(brew --prefix php-version)/php-version.sh && php-version 5
+source $(brew --prefix php-version)/php-version.sh && php-version 7
 source "`brew --prefix`/etc/grc.bashrc"
 
 # Generic colourizer
