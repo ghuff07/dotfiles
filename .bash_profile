@@ -48,9 +48,6 @@ which shopt > /dev/null && shopt -s histappend  # append to history, don't overw
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-source $(brew --prefix php-version)/php-version.sh && php-version 7
-source "`brew --prefix`/etc/grc.bashrc"
 
 # Generic colourizer
 GRC=`which grc`
@@ -94,6 +91,11 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 
 export STUDIO_JDK=$JAVA_HOME
 
+source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix php-version)/php-version.sh && php-version 7
+source "`brew --prefix`/etc/grc.bashrc"
 source ~/.profile
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
