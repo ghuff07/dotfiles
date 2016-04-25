@@ -18,6 +18,7 @@ export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export JENV_ROOT=/usr/local/var/jenv
 export PYENV_ROOT=/usr/local/var/pyenv
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk
 export FINDBUGS_HOME=/usr/local/Cellar/findbugs/3.0.1/libexec
 export EDITOR='subl -w'
 export MANPAGER="less -X"
@@ -88,8 +89,6 @@ shopt -s cdspell;
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-export STUDIO_JDK=$JAVA_HOME
 
 source $(brew --prefix nvm)/nvm.sh
 source $(brew --prefix php-version)/php-version.sh && php-version 7
