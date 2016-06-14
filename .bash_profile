@@ -24,6 +24,7 @@ export EDITOR='subl -w'
 export MANPAGER="less -X"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
+export NVM_SYMLINK_CURRENT=true
 export HOMEBREW_GITHUB_API_TOKEN=
 
 # Highlighting inside manpages and elsewhere
