@@ -1,9 +1,2 @@
-# Git credentials
-GIT_AUTHOR_NAME="Gregory Huff"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="gregory.huff@gmail.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-
 alias ipy='ipython qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13'
+alias ipy3='ipython3 qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13'

@@ -1,6 +1,11 @@
-alias ls='ls --color=always' 
-alias grep='grep --color=always'
-alias egrep='egrep --color=always'
+if [ -x /usr/local/bin/gls ]; then
+  alias ls='gls --color=always'
+  alias dir='gdir --color=always'
+  alias vdir='gvdir --color=always'
+  alias grep='grep --color=always'
+  alias egrep='egrep --color=always'
+  alias fgrep='fgrep --color=always'
+fi
 
 # List all files colorized in long format
 alias ll='ls -lh'

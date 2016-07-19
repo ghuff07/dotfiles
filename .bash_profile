@@ -11,12 +11,12 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export HOMEBREW_GITHUB_API_TOKEN=
 
-test -e ~/.dircolors && eval "$(dircolors -b ~/.dircolors)"
+if [ -x /usr/local/bin/gdircolors ]; then
+  test -e ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)"
+fi
 
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
     . $(brew --prefix)/share/bash-completion/bash_completion
