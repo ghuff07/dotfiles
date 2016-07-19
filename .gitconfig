@@ -21,21 +21,20 @@
   added = yellow
   changed = green
   untracked = cyan
-# Use `origin` as the default remote on the `master` branch in all cases
+  # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
   remote = origin
   merge = refs/heads/master
 [user]
-	name = Gregory Huff
-	email = gregory.huff@gmail.com
+  name = Gregory Huff
+  email = gregory.huff@gmail.com
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [core]
-	excludesfile = /Users/gregory_huff/.gitignore_global
-	editor = subl -n -w
+  excludesfile = /Users/gregoryhuff/.gitignore_global
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
