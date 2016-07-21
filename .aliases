@@ -15,3 +15,11 @@ alias la='ls -lha'
 
 # List only directories
 alias lsd='ls -ld */'
+
+if [ -x /usr/local/bin/ipython ]; then
+  alias ipy='ipython qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13'
+fi
+
+if [ -x /usr/local/bin/ipython3 ]; then
+  alias ipy3='ipython3 qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13'
+fi
