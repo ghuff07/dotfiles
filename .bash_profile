@@ -12,7 +12,8 @@ done
 unset file
 
 # exports
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+brew_php="php71"
+export PATH="$(brew --prefix homebrew/php/$brew_php)/bin:$PATH"
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
