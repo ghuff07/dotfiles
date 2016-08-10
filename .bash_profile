@@ -17,6 +17,7 @@ export PATH="$(brew --prefix homebrew/php/$brew_php)/bin:$PATH"
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export FINDBUGS_HOME=/usr/local/Cellar/findbugs/3.0.1/libexec
 export SONAR_RUNNER_HOME=/usr/local/Cellar/sonar-runner/2.5/libexec
