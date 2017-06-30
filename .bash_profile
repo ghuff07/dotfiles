@@ -19,6 +19,8 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_HOME=/usr/local/share/android-sdk
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+export ANDROID_NDK_HOME=/usr/local/share/android-ndk
 export FINDBUGS_HOME=/usr/local/Cellar/findbugs/3.0.1/libexec
 export SONAR_RUNNER_HOME=/usr/local/Cellar/sonar-runner/2.5/libexec
 export HOMEBREW_GITHUB_API_TOKEN=
@@ -28,9 +30,9 @@ if [ -x /usr/local/bin/gdircolors ]; then
   test -e ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)"
 fi
 
-# completion for bash 4.0+
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion
+# completion for bash 4.1+
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
 fi
 
 # added by ST3 - sublime text shell integration
