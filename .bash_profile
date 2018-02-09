@@ -12,7 +12,7 @@ done
 unset file
 
 # exports
-brew_php="php71"
+brew_php="php72"
 export PATH="$(brew --prefix homebrew/php/$brew_php)/bin:$PATH"
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
@@ -21,8 +21,6 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_HOME=/usr/local/share/android-sdk
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export ANDROID_NDK_HOME=/usr/local/share/android-ndk
-export FINDBUGS_HOME=/usr/local/Cellar/findbugs/3.0.1/libexec
-export SONAR_RUNNER_HOME=/usr/local/Cellar/sonar-runner/2.5/libexec
 export HOMEBREW_GITHUB_API_TOKEN=
 
 # dircolors from GNU coreutils
