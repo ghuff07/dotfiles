@@ -12,13 +12,12 @@ done
 unset file
 
 # exports
-brew_php="php72"
-export PATH="$(brew --prefix homebrew/php/$brew_php)/bin:$PATH"
+export EDITOR='subl -w'
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=/usr/local/opt/python@2/libexec/bin:$PATH
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export ANDROID_HOME=/usr/local/share/android-sdk
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export ANDROID_NDK_HOME=/usr/local/share/android-ndk
 export HOMEBREW_GITHUB_API_TOKEN=
