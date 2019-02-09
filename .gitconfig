@@ -26,15 +26,19 @@
   remote = origin
   merge = refs/heads/master
 [user]
-  name = Gregory Huff
-  email = gregory.huff@gmail.com
+	name = Gregory Huff
+	email = gregory.huff@gmail.com
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [core]
-  excludesfile = /Users/gregoryhuff/.gitignore_global
+	excludesfile = /Users/gregoryhuff/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/gregoryhuff/.stCommitMsg
+[init]
+	templateDir = /Users/gregoryhuff/.git-templates/git-secrets
