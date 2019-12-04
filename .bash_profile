@@ -14,9 +14,12 @@ unset file
 # exports
 export EDITOR='code -w'
 export GOPATH=$HOME/.go
+export NVM_DIR="$HOME/.nvm"
+export PYENV_ROOT="$HOME/.pyenv"
 export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export ANDROID_NDK_HOME=/usr/local/share/android-ndk
@@ -29,13 +32,29 @@ if [ -x /usr/local/bin/gdircolors ]; then
 fi
 
 # completion for bash 4.1+
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # homebrew command not found
-if brew command command-not-found-init >/dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+if brew command command-not-found-init >/dev/null 2>&1; then
+  eval "$(brew command-not-found-init)"
+fi
 
 # iTerm shell integration
 source ~/.iterm2_shell_integration.bash
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# NVM
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# rbenv
+if command -v rbenv 1>/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
+
+# pyenv / pyenv-virtualenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+if which pyenv-virtualenv-init >/dev/null; then
+  eval "$(pyenv virtualenv-init -)"
+fi
