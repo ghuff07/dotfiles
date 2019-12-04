@@ -3,10 +3,8 @@ PATH=/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
 
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+# Load the shell dotfiles
+for file in ~/.{bash_prompt,aliases}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -42,9 +40,9 @@ fi
 # iTerm shell integration
 source ~/.iterm2_shell_integration.bash
 
-# NVM
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"                                       # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+# nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # rbenv
 if command -v rbenv 1>/dev/null 2>&1; then
