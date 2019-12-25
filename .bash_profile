@@ -20,7 +20,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-export ANDROID_NDK_HOME=/usr/local/share/android-ndk
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 export HOMEBREW_GITHUB_API_TOKEN=
 
