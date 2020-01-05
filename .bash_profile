@@ -36,6 +36,10 @@ if brew command command-not-found-init >/dev/null 2>&1; then
   eval "$(brew command-not-found-init)"
 fi
 
+# Google Cloud SDK
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+
 # iTerm shell integration
 source ~/.iterm2_shell_integration.bash
 
