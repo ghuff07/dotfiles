@@ -32,16 +32,10 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/gregoryhuff/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [commit]
 	template = /Users/gregoryhuff/.stCommitMsg
 [init]
-	templateDir = /Users/gregoryhuff/.git-templates/git-secrets
+	templateDir = /Users/gregory/.git-templates/git-secrets
 [secrets]
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}

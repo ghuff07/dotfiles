@@ -16,9 +16,7 @@ alias la='ls -lha'
 # List only directories
 alias lsd='ls -ld */'
 
-if [ -x /usr/local/bin/ipython ]; then
-  alias ipy='ipython qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13'
+# make brew doctor play nice with pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  alias brew='PATH=${PATH//$(pyenv root)\/shims:/} brew'
 fi
-
-# make brew play nice with pyenv
-alias brew='PATH=${PATH//$(pyenv root)\/shims:/} brew'
