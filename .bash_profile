@@ -19,6 +19,9 @@ export EDITOR='code -w'
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export MONO_GAC_PREFIX="/usr/local"
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS="--require-sha --no-quarantine"
+export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_GITHUB_API_TOKEN=
 
 # dircolors from GNU coreutils
