@@ -7,6 +7,9 @@ export PATH
 if command -v anyenv 1>/dev/null 2>&1; then
   eval "$(anyenv init -)"
 fi
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
 
 # Load shell dotfiles
 for file in ~/.{bash_prompt,aliases}; do
@@ -19,6 +22,7 @@ export EDITOR='code -w'
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export MONO_GAC_PREFIX="/usr/local"
+export CLOUDSDK_PYTHON=python3.9
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export HOMEBREW_NO_ANALYTICS=1
