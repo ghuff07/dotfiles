@@ -15,8 +15,3 @@ alias la='ls -lha'
 
 # List only directories
 alias lsd='ls -ld */'
-
-# make brew doctor play nice with pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  alias brew='PATH=${PATH//$(pyenv root)\/shims:/} brew'
-fi

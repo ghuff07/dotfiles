@@ -7,9 +7,6 @@ export PATH
 if command -v anyenv 1>/dev/null 2>&1; then
   eval "$(anyenv init -)"
 fi
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
 
 # Load shell dotfiles
 for file in ~/.{bash_prompt,aliases}; do
@@ -20,9 +17,6 @@ unset file
 # exports
 export EDITOR='code -w'
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-export MONO_GAC_PREFIX="/usr/local"
-export CLOUDSDK_PYTHON=python3.9
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export HOMEBREW_NO_ANALYTICS=1
@@ -33,8 +27,20 @@ if [ -x /usr/local/bin/gdircolors ]; then
   test -e ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)"
 fi
 
+# homebrew bash completions
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
+
 # completion for bash 4.1+
-[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
+#[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # homebrew command not found
 if brew command command-not-found-init >/dev/null 2>&1; then
@@ -42,8 +48,7 @@ if brew command command-not-found-init >/dev/null 2>&1; then
 fi
 
 # Google Cloud SDK
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 
 # iTerm shell integration
 source ~/.iterm2_shell_integration.bash
